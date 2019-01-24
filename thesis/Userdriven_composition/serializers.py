@@ -8,5 +8,5 @@ class ActuatorSerializer(serializers.ModelSerializer):
 
 class LowerSensorSerializer(serializers.ModelSerializer):
 	class Meta:
-		model = Actuator
+		model = LowerSensor
 		fields = ('topic','value', 'time', 'name')
