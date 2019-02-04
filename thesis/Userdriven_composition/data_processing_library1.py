@@ -25,5 +25,6 @@ def action_motor(motor_status):
 
 def get_lowersensor():
 	data = requests.get("http://127.0.0.1:8000/api/lowersensors/2/").json()
-	return data['value']
+	data = int(data['value'])
+	return(data)
       
