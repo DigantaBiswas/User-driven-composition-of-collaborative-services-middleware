@@ -27,4 +27,15 @@ def get_lowersensor():
 	data = requests.get("http://127.0.0.1:8000/api/lowersensors/2/").json()
 	data = int(data['value'])
 	return(data)
-      
+
+
+
+
+def value_to_print(text):
+	print(text+"pass function")
+	return text
+
+
+def print_content(what_to_print):
+	what_to_print=what_to_print+"print_content"
+	print(what_to_print)
