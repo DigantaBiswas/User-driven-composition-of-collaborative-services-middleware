@@ -32,10 +32,10 @@ def get_lowersensor():
 
 
 def value_to_print(text):
-	print(text+"pass function")
+	print(text+" pass function")
 	return text
 
 
 def print_content(what_to_print):
-	what_to_print=what_to_print+"print_content"
+	what_to_print=what_to_print+" print_content"
 	print(what_to_print)

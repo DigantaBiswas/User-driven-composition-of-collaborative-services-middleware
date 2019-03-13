@@ -7,12 +7,10 @@
 //   return [code, Blockly.JavaScript.ORDER_NONE];
 // };
 
-
-
-Blockly.JavaScript['value_to_print'] = function(block) {
-  var value_to_input = Blockly.JavaScript.valueToCode(block, 'to_input', Blockly.JavaScript.ORDER_ATOMIC);
+Blockly.Python['value_to_print'] = function(block) {
+  var value_to_input = Blockly.Python.valueToCode(block, 'to_input', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = 'dada';
+  var code = 'value_to_print('+value_to_input+')';
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
+  return [code, Blockly.Python.ORDER_NONE];
 };
