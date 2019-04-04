@@ -18,6 +18,7 @@ def BlockGenerator(nameid, service_type):
     BlockDeclaration(BlockName)
     BlockJsGenerator(BlockName,BlockType)
     BlockJsDeclaration(BlockName)
+    print('got it')
 
 # This Function Genearte UI of The Block
 def BlockUiGenerator(BlockName, BlockType):
@@ -41,15 +42,43 @@ def BlockJsGenerator(BlockName, BlockType):
 
 #return Type of Block Ui you want
 def GetBlockUI(BlockName, BlockType):
-    if BlockType == 'sensor':
-        BlockUi = '\n\n'+"//"+BlockName+" sensor block start"+'\n'+"Blockly.Blocks["+"'"+BlockName+"'"+"] = {"+'\n'+'\t'+"init: function() {"+'\n'+'\t\t'+"this.appendDummyInput()"+'\n'+'\t\t'+".appendField(new Blockly.FieldLabel("+"'"+BlockName+"'"+"));"+'\n'+'\t\t'+"this.setOutput(true, 'Number');"+'\n'+'\t\t'+"this.setColour(20);"+'\n'+'\t'+"}"+'\n'+"}"+'\n'+"//"+BlockName+" sensor block end"
-        return BlockUi
+    # if BlockType == 'sensor':
+    #     BlockUi = '\n\n'+"//"+BlockName+" sensor block start"+'\n'+"Blockly.Blocks["+"'"+BlockName+"'"+"] = {"+'\n'+'\t'+"init: function() {"+'\n'+'\t\t'+"this.appendDummyInput()"+'\n'+'\t\t'+".appendField(new Blockly.FieldLabel("+"'"+BlockName+"'"+"));"+'\n'+'\t\t'+"this.setOutput(true, 'Number');"+'\n'+'\t\t'+"this.setColour(20);"+'\n'+'\t'+"}"+'\n'+"}"+'\n'+"//"+BlockName+" sensor block end"
+    #     return BlockUi
+    if BlockType=='sensor' or 'actuator':
+        BlockUi = """
+            Blockly.Blocks['"""+BlockName+"""'] = {
+            init: function() {
+            this.appendValueInput("to_input")
+            .setCheck(null)
+            .appendField('"""+BlockName+"""');
+            this.setOutput(true, null);
+            this.setColour(230);
+            this.setTooltip("");
+            this.setHelpUrl("");
+      }
+    };
+        """
+
+    return BlockUi
 
 #Greturn type of block js you want
 def GetBlockJs(BlockName, BlockType):
-    if BlockType == 'sensor':
-        BlockJs = "Blockly.Python["+"'"+BlockName+"'"+"] = function(Block) {"+'\n'+'\t'+"var code = "+'"'+BlockName+'()"'+";"+'\n'+'\t'+"return [code, Blockly.Python.ORDER_ATOMIC];"+'\n'+"}"
-        return BlockJs
+    # if BlockType == 'sensor':
+    #     BlockJs = "Blockly.Python["+"'"+BlockName+"'"+"] = function(Block) {"+'\n'+'\t'+"var code = "+'"'+BlockName+'()"'+";"+'\n'+'\t'+"return [code, Blockly.Python.ORDER_ATOMIC];"+'\n'+"}"
+    #     return BlockJs
+    if BlockType=='sensor' or 'actuator':
+        BlockJs = """
+            Blockly.Python['"""+BlockName+"""'] = function(block) {
+              var value_to_input = Blockly.Python.valueToCode(block, 'to_input', Blockly.Python.ORDER_ATOMIC);
+              // TODO: Assemble JavaScript into code variable.
+              var code = '"""+BlockName+"""('+value_to_input+')';
+              // TODO: Change ORDER_NONE to the correct strength.
+              return [code, Blockly.Python.ORDER_NONE];
+            };
+        """
+    return BlockJs
+
 
 def BlockJsDeclaration(BlockName):
     f= open("templetes/blocks_js_declaration.js","a+")
