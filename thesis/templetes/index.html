@@ -16,7 +16,7 @@
   <script src="{% static 'js/generators/codegenerator-print_content.js' %}"></script>
   <script src="{% static 'js/generators/codegenerator-value_to_print.js' %}"></script>
   <script src="{% static 'js/jquery.min.js' %}"></script>
-
+  {% include "blocks_js_declaration.js" %}
   <script src="{% static 'js/jquery.min.js' %}"></script>
   <style>
     body {
@@ -81,15 +81,19 @@
 
 
     <!-- custom blockly bocks(made by us) -->
-    <category name="webapi" colour="">
-      <block type="weather"></block>
-      <block type="motor-on"></block>
-      <block type="motor-off"></block>
-      <block type="l-sensor"></block>
-      <block type="print_content"></block>
-      <block type="value_to_print"></block>
+        <category name="Sensors" colour="%{BKY_MATH_HUE}">
+
+      <!-- This is here to declare all blocks -->
+      {% include "blocks_declaration.html" %}
+
     </category>
-      <!-- end custom blockly bocks -->
+
+    <category name="Actuators" colour="%{BKY_TEXTS_HUE}">
+
+      
+
+    </category>
+    <!-- end custom blockly bocks -->
   </xml>
 
 
@@ -207,7 +211,8 @@ Blockly.Blocks['value_to_print'] = {
 
 
 
-//weather
+//This is here to include all blocks Ui
+    {% include "blocks.js" %}
 
 
   </script>

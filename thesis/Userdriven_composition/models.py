@@ -1,6 +1,10 @@
 from django.db import models
 from datetime import datetime
 from django.utils import timezone
+from django.db.models import signals
+import requests
+
+
 
 
 # Create your models here.
@@ -33,3 +37,16 @@ class LowerSensor(models.Model):
 		if not self.id:
 			self.time = timezone.now()
 		return super(LowerSensor, self).save(*args, **kwargs)
+
+
+class Service_registry(models.Model):
+	name = models.CharField(max_length=50)
+	name_id = models.CharField(max_length=100)
+	api_link = models.CharField(max_length=200)
+	service_type = models.CharField(max_length=50)
+
+	def __str__(self):
+		return self.name
+
+
+
