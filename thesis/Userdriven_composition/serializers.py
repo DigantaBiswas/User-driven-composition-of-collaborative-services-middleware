@@ -16,4 +16,4 @@ class LowerSensorSerializer(serializers.ModelSerializer):
 class ServiceRegistrySerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Service_registry
-		fields = ('id','name','name_id','api_link','service_type')
+		fields = ('id','name','service_type')

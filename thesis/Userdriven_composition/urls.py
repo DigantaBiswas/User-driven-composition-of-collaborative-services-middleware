@@ -1,4 +1,5 @@
 from . import views
+from .views import ActuatorListApiView
 from django.urls import path,include
 from rest_framework import routers
 from django.conf.urls import url
@@ -13,5 +14,6 @@ urlpatterns = [
     path('',views.home, name = 'home_url'),
     path('api/',include(router.urls)),
 	path('getMotorStatus/',views.getMotorStatus, name='status'),
+	path('actuators/', ActuatorListApiView.as_view(),name="actuator_filter"),
 # 	url(r'^dig/',views.LowerSensorAPI.as_view()),
 ]

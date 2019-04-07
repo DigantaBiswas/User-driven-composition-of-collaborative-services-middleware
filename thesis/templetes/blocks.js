@@ -56,54 +56,13 @@ Blockly.Blocks['OTEDST'] = {
 }
 //OTEDST sensor block end
 
-//albert000 sensor block start
-Blockly.Blocks['albert000'] = {
-	init: function() {
-		this.appendDummyInput()
-		.appendField(new Blockly.FieldLabel('albert000'));
-		this.setOutput(true, 'Number');
-		this.setColour(20);
-	}
-}
-//albert000 sensor block end
 
-//albert000 sensor block start
-Blockly.Blocks['albert000'] = {
-	init: function() {
-		this.appendDummyInput()
-		.appendField(new Blockly.FieldLabel('albert000'));
-		this.setOutput(true, 'Number');
-		this.setColour(20);
-	}
-}
-//albert000 sensor block end
-
-//albert098 sensor block start
-Blockly.Blocks['albert098'] = {
-	init: function() {
-		this.appendDummyInput()
-		.appendField(new Blockly.FieldLabel('albert098'));
-		this.setOutput(true, 'Number');
-		this.setColour(20);
-	}
-}
-//albert098 sensor block end
-
-//dzbz123 sensor block start
-Blockly.Blocks['dzbz123'] = {
-	init: function() {
-		this.appendDummyInput()
-		.appendField(new Blockly.FieldLabel('dzbz123'));
-		this.setOutput(true, 'Number');
-		this.setColour(20);
-	}
-}
-//dzbz123 sensor block end
-            Blockly.Blocks['dzbz123'] = {
+        
+            Blockly.Blocks['kihdis1'] = {
             init: function() {
             this.appendValueInput("to_input")
             .setCheck(null)
-            .appendField("pass");
+            .appendField('kihdis1');
             this.setOutput(true, null);
             this.setColour(230);
             this.setTooltip("");
@@ -111,11 +70,11 @@ Blockly.Blocks['dzbz123'] = {
       }
     };
         
-            Blockly.Blocks['voda'] = {
+            Blockly.Blocks['soil_moisture_sensor::3.22::1.22::Digonta3'] = {
             init: function() {
             this.appendValueInput("to_input")
             .setCheck(null)
-            .appendField('voda');
+            .appendField('soil_moisture_sensor::3.22::1.22::Digonta3');
             this.setOutput(true, null);
             this.setColour(230);
             this.setTooltip("");
@@ -123,11 +82,11 @@ Blockly.Blocks['dzbz123'] = {
       }
     };
         
-            Blockly.Blocks['paglachulkene'] = {
+            Blockly.Blocks['soil_moisture_sensor_3.22_1.22_Avee4'] = {
             init: function() {
             this.appendValueInput("to_input")
             .setCheck(null)
-            .appendField('paglachulkene');
+            .appendField('soil_moisture_sensor_3.22_1.22_Avee4');
             this.setOutput(true, null);
             this.setColour(230);
             this.setTooltip("");
@@ -135,11 +94,11 @@ Blockly.Blocks['dzbz123'] = {
       }
     };
         
-            Blockly.Blocks['arif+gay+mozahid'] = {
+            Blockly.Blocks['soil_moisture_sensor_2_33_1_22_Arif5'] = {
             init: function() {
             this.appendValueInput("to_input")
             .setCheck(null)
-            .appendField('arif+gay+mozahid');
+            .appendField('soil_moisture_sensor_2_33_1_22_Arif5');
             this.setOutput(true, null);
             this.setColour(230);
             this.setTooltip("");
@@ -147,11 +106,11 @@ Blockly.Blocks['dzbz123'] = {
       }
     };
         
-            Blockly.Blocks['arifmagirchele'] = {
+            Blockly.Blocks['soil_moisture_sensor_3_22_2_111_User'] = {
             init: function() {
             this.appendValueInput("to_input")
             .setCheck(null)
-            .appendField('arifmagirchele');
+            .appendField('soil_moisture_sensor_3_22_2_111_User');
             this.setOutput(true, null);
             this.setColour(230);
             this.setTooltip("");
@@ -159,11 +118,11 @@ Blockly.Blocks['dzbz123'] = {
       }
     };
         
-            Blockly.Blocks['tomarbara'] = {
+            Blockly.Blocks['Motor_actuator_longi_actuator_lati_Sayeed'] = {
             init: function() {
             this.appendValueInput("to_input")
             .setCheck(null)
-            .appendField('tomarbara');
+            .appendField('Motor_actuator_longi_actuator_lati_Sayeed');
             this.setOutput(true, null);
             this.setColour(230);
             this.setTooltip("");
@@ -171,11 +130,11 @@ Blockly.Blocks['dzbz123'] = {
       }
     };
         
-            Blockly.Blocks['asholbara'] = {
+            Blockly.Blocks['Motor_actuator_longi_actuator_lati_User'] = {
             init: function() {
             this.appendValueInput("to_input")
             .setCheck(null)
-            .appendField('asholbara');
+            .appendField('Motor_actuator_longi_actuator_lati_User');
             this.setOutput(true, null);
             this.setColour(230);
             this.setTooltip("");
@@ -183,11 +142,11 @@ Blockly.Blocks['dzbz123'] = {
       }
     };
         
-            Blockly.Blocks['hazabaeala'] = {
+            Blockly.Blocks['Motor_actuator_longi_actuator_lati_New User'] = {
             init: function() {
             this.appendValueInput("to_input")
             .setCheck(null)
-            .appendField('hazabaeala');
+            .appendField('Motor_actuator_longi_actuator_lati_New User');
             this.setOutput(true, null);
             this.setColour(230);
             this.setTooltip("");

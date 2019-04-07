@@ -40,9 +40,9 @@ class LowerSensor(models.Model):
 
 
 class Service_registry(models.Model):
-	name = models.CharField(max_length=50)
-	name_id = models.CharField(max_length=100)
-	api_link = models.CharField(max_length=200)
+	name = models.CharField(max_length=100,unique=True)
+	#name_id = models.CharField(max_length=100)
+	#api_link = models.CharField(max_length=200)
 	service_type = models.CharField(max_length=50)
 
 	def __str__(self):

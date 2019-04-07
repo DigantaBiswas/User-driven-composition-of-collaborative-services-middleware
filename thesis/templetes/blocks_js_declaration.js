@@ -2,26 +2,19 @@
 
 <script src="static/js/generators/codegenerator-OTEDST.js"></script>
 
-<script src="static/js/generators/codegenerator-albert000.js"></script>
 
-<script src="static/js/generators/codegenerator-albert000.js"></script>
+<script src="static/js/generators/codegenerator-kihdis1.js"></script>
 
-<script src="static/js/generators/codegenerator-albert098.js"></script>
+<script src="static/js/generators/codegenerator-soil_moisture_sensor::3.22::1.22::Digonta3.js"></script>
 
-<script src="static/js/generators/codegenerator-dzbz123.js"></script>
+<script src="static/js/generators/codegenerator-soil_moisture_sensor_3.22_1.22_Avee4.js"></script>
 
-<script src="static/js/generators/codegenerator-dzbz123.js"></script>
+<script src="static/js/generators/codegenerator-soil_moisture_sensor_2_33_1_22_Arif5.js"></script>
 
-<script src="static/js/generators/codegenerator-voda.js"></script>
+<script src="static/js/generators/codegenerator-soil_moisture_sensor_3_22_2_111_User.js"></script>
 
-<script src="static/js/generators/codegenerator-paglachulkene.js"></script>
+<script src="static/js/generators/codegenerator-Motor_actuator_longi_actuator_lati_Sayeed.js"></script>
 
-<script src="static/js/generators/codegenerator-arif+gay+mozahid.js"></script>
+<script src="static/js/generators/codegenerator-Motor_actuator_longi_actuator_lati_User.js"></script>
 
-<script src="static/js/generators/codegenerator-arifmagirchele.js"></script>
-
-<script src="static/js/generators/codegenerator-tomarbara.js"></script>
-
-<script src="static/js/generators/codegenerator-asholbara.js"></script>
-
-<script src="static/js/generators/codegenerator-hazabaeala.js"></script>
+<script src="static/js/generators/codegenerator-Motor_actuator_longi_actuator_lati_New User.js"></script>

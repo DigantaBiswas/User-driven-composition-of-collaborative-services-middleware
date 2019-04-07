@@ -1,14 +1,14 @@
-def actuator_function_writter(function_name,url):
+def actuator_function_writter(function_name,tag):
 	print("writting actuator_function_writter")
 	file = open("test_file.py","a+")
 
 	code = """
 def """ + function_name+"""(motor_status):
-	url = '"""+url+"""'
+	url = 'http://192.168.1.137:8000/api/actuators/'
 
 	data = {
 
-		"topic": """+function_name+""",
+		"topic": '"""+tag+"""',
 		"value": motor_status,
 		"time": "2019-01-24T13:35:24.246226Z",
 		"name": "1"
@@ -34,14 +34,14 @@ def """ + function_name+"""(motor_status):
 
 
 
-def sensor_function_writter(function_name,url):
+def sensor_function_writter(function_name,tag):
 	file = open("test_file.py","a+")
 
 	code = """
 def """+function_name+"""():
 	empty_list=[]
-	sensor_tag = """+function_name+"""
-	data = requests.get("http://127.0.0.1:8000/api/lowersensors/").json()
+	sensor_tag = """+tag+"""
+	data = requests.get("http://192.168.1.137:8000/api/lowersensors/").json()
 	for i in data:
 		if i['topic']==sensor_tag:
 			empty_list.append(i)
