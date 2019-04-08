@@ -4,7 +4,7 @@ def actuator_function_writter(function_name,tag):
 
 	code = """
 def """ + function_name+"""(motor_status):
-	url = 'http://192.168.1.137:8000/api/actuators/'
+	url = 'http://192.168.1.110:8000/api/actuators/'
 
 	data = {
 
@@ -17,7 +17,7 @@ def """ + function_name+"""(motor_status):
 
 
 	#Call REST API
-	response = requests.put(url, data=data)
+	response = requests.post(url, data=data)
 
 	#Print Response
 	print(response.text)
@@ -41,7 +41,7 @@ def sensor_function_writter(function_name,tag):
 def """+function_name+"""():
 	empty_list=[]
 	sensor_tag = """+tag+"""
-	data = requests.get("http://192.168.1.137:8000/api/lowersensors/").json()
+	data = requests.get("http://192.168.1.110:8000/api/lowersensors/").json()
 	for i in data:
 		if i['topic']==sensor_tag:
 			empty_list.append(i)

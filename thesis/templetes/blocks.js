@@ -154,3 +154,27 @@ Blockly.Blocks['OTEDST'] = {
       }
     };
         
+            Blockly.Blocks['device_name_actuator_longi_actuator_lati_owner_name'] = {
+            init: function() {
+            this.appendValueInput("to_input")
+            .setCheck(null)
+            .appendField('device_name_actuator_longi_actuator_lati_owner_name');
+            this.setOutput(true, null);
+            this.setColour(230);
+            this.setTooltip("");
+            this.setHelpUrl("");
+      }
+    };
+        
+            Blockly.Blocks['Labtest_2_33_1_22_LAB'] = {
+            init: function() {
+            this.appendValueInput("to_input")
+            .setCheck(null)
+            .appendField('Labtest_2_33_1_22_LAB');
+            this.setOutput(true, null);
+            this.setColour(230);
+            this.setTooltip("");
+            this.setHelpUrl("");
+      }
+    };
+        

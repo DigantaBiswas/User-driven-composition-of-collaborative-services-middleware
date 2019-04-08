@@ -130,3 +130,43 @@ def Motor_actuator_longi_actuator_lati_New User(motor_status):
 	print(response.text)
 
 	
+def device_name_actuator_longi_actuator_lati_owner_name(motor_status):
+	url = 'http://192.168.1.110:8000/api/actuators/'
+
+	data = {
+
+		"topic": 'device_name_actuator_longi_actuator_lati_owner_name',
+		"value": motor_status,
+		"time": "2019-01-24T13:35:24.246226Z",
+		"name": "1"
+        }
+
+
+
+	#Call REST API
+	response = requests.put(url, data=data)
+
+	#Print Response
+	print(response.text)
+
+	
+def Labtest_2_33_1_22_LAB(motor_status):
+	url = 'http://192.168.1.110:8000/api/actuators/'
+
+	data = {
+
+		"topic": 'Labtest_2.33_1.22_LAB',
+		"value": motor_status,
+		"time": "2019-01-24T13:35:24.246226Z",
+		"name": "1"
+        }
+
+
+
+	#Call REST API
+	response = requests.put(url, data=data)
+
+	#Print Response
+	print(response.text)
+
+	

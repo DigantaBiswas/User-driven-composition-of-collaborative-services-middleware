@@ -22,7 +22,7 @@ from rest_framework.response import Response
 def home(request):
     action_motor("0")
     get_lowersensor()
-    all_service = requests.get("http://192.168.1.137:8000/api/serviceregistry/").json()
+    all_service = requests.get("http://192.168.1.110:8000/api/serviceregistry/").json()
     #print(all_service)
     last_service = all_service[-1]
 
@@ -46,6 +46,24 @@ def home(request):
         elif last_service['service_type'] == 'actuator':
             automatic_writter.actuator_function_writter(name_id,sensor_tag)
             BlockGenerator.BlockGenerator(name_id,last_service['service_type'])
+
+# posting to actuator model            
+            url = 'http://192.168.1.110:8000/api/actuators/'
+
+            data = {
+
+                "topic": name_id,
+                "value": "null",
+                "time": "null",
+                "name": "1"
+                }
+
+
+
+            #Call REST API
+            response = requests.post(url, data=data)
+
+
 
     return render(request, 'index.html')
 	
@@ -77,7 +95,7 @@ class ActuatorListApiView(generics.ListAPIView):
         if query is not None:
             qs= qs.filter(
                 Q(topic__icontains=query)
-                ).distinct()
+                ).distinct().order_by('-time')[:1]
         
         return qs
 

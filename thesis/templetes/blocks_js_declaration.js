@@ -18,3 +18,7 @@
 <script src="static/js/generators/codegenerator-Motor_actuator_longi_actuator_lati_User.js"></script>
 
 <script src="static/js/generators/codegenerator-Motor_actuator_longi_actuator_lati_New User.js"></script>
+
+<script src="static/js/generators/codegenerator-device_name_actuator_longi_actuator_lati_owner_name.js"></script>
+
+<script src="static/js/generators/codegenerator-Labtest_2_33_1_22_LAB.js"></script>
