@@ -5,7 +5,7 @@
 
 <script src="static/js/generators/codegenerator-kihdis1.js"></script>
 
-<script src="static/js/generators/codegenerator-soil_moisture_sensor::3.22::1.22::Digonta3.js"></script>
+
 
 <script src="static/js/generators/codegenerator-soil_moisture_sensor_3.22_1.22_Avee4.js"></script>
 

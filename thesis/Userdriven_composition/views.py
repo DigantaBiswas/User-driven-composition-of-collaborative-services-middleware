@@ -22,7 +22,7 @@ from rest_framework.response import Response
 def home(request):
     action_motor("0")
     get_lowersensor()
-    all_service = requests.get("http://192.168.1.110:8000/api/serviceregistry/").json()
+    all_service = requests.get("http://127.0.0.1:8000/api/serviceregistry/").json()
     #print(all_service)
     last_service = all_service[-1]
 
@@ -34,21 +34,25 @@ def home(request):
     sensor_tag = name_id
     name_id = name_id.replace(".","_")
 
-    print(a)
+    # print(a)
+
+    # checking for new entry in Service_registry
     if int(a) < last_service['id']:
         print('a')
         write_file = open('last-id.txt','w+')
         write_file.write(str(last_service['id']))
         write_file.close()
+
         if last_service['service_type'] == 'sensor':
             automatic_writter.sensor_function_writter(name_id,sensor_tag)
             BlockGenerator.BlockGenerator(name_id,last_service['service_type'])
+
         elif last_service['service_type'] == 'actuator':
             automatic_writter.actuator_function_writter(name_id,sensor_tag)
             BlockGenerator.BlockGenerator(name_id,last_service['service_type'])
 
 # posting to actuator model            
-            url = 'http://192.168.1.110:8000/api/actuators/'
+            url = 'http://127.0.0.1:8000/api/actuators/'
 
             data = {
 

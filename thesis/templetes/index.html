@@ -15,6 +15,7 @@
   <script src="{% static 'js/generators/codegenerator-lowersensor.js' %}"></script>
   <script src="{% static 'js/generators/codegenerator-print_content.js' %}"></script>
   <script src="{% static 'js/generators/codegenerator-value_to_print.js' %}"></script>
+  <script src="{% static 'js/generators/codegenerator-do_it.js' %}"></script>
   <script src="{% static 'js/jquery.min.js' %}"></script>
   {% include "blocks_js_declaration.js" %}
   <script src="{% static 'js/jquery.min.js' %}"></script>
@@ -35,6 +36,8 @@
     <button onclick="showCode()">Show Python</button>
 
     <button onclick="runCode()" id="runcode">Run Python</button>
+     <button onclick="save()" id="save">Save Combination</button>
+      <button onclick="restore()" id="restore">Restore</button>
     <!--not used right now
     <button onclick="showXml()">Generate XML tree</button>
   -->
@@ -54,6 +57,7 @@
       <block type="logic_operation"></block>
       <block type="logic_negate"></block>
       <block type="logic_boolean"></block>
+      <block type="do_it"></block>
     </category>
     <category name="Loops" colour="%{BKY_LOOPS_HUE}">
       <block type="controls_repeat_ext">
@@ -110,6 +114,41 @@
       var code = Blockly.Python.workspaceToCode(demoWorkspace);
       alert(code);
     }
+
+
+    function save(){
+      console.log("abcd");
+      if (typeof(Storage)!=="undefined")
+      {
+        var xml = Blockly.Python.workspaceToDom(Blockly.demoWorkspace);
+        localStorage.setItem(document.getElementById("blocklyDiv").value,Blockly.Python.domToText( xml ));
+        Blockly.demoWorkspace.clear();
+      }
+      else{
+        alart("error in save");
+      }
+    }
+
+
+    function restore(){
+      Blockly.demoWorkspace.clear()
+      var nameOfTheProject = document.getElementById("blocklyDiv").value;
+      if (typeof(Storage)!=="undefined"){
+        if (localStorage.data!=null){
+          var xml = Blockly.Python.textToCode(localStorage.getItem(nameOfTheProject));
+            Blockly.Python.domToWorkspace(Blockly.demoWorkspace,xml);
+        }
+        else{
+          alart("nothing to restore");
+        }
+      }
+    }
+
+
+
+
+
+
     //run code and give a post httprequest to the server
     //then server will get the value and make decissions
     function runCode(){
@@ -133,20 +172,35 @@
           });
     }
 //weater block start
-Blockly.Blocks['weather'] = {
+// Blockly.Blocks['weather'] = {
+//   init: function() {
+//     this.appendValueInput("to_input")
+//         .setCheck(null)
+//         .appendField("Weather info");
+//     this.setOutput(true, null);
+//     this.setColour(230);
+//  this.setTooltip("");
+//  this.setHelpUrl("");
+//   }
+// };
+//weather block end
+
+//motor block start
+
+
+Blockly.Blocks['do_it'] = {
   init: function() {
-    this.appendValueInput("to_input")
+    this.appendValueInput("NAME")
         .setCheck(null)
-        .appendField("Weather info");
-    this.setOutput(true, null);
+        .appendField("Do");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
     this.setColour(230);
  this.setTooltip("");
  this.setHelpUrl("");
   }
 };
-//weather block end
 
-//motor block start
     Blockly.Blocks['motor-on'] = {
       init: function() {
         this.appendDummyInput()

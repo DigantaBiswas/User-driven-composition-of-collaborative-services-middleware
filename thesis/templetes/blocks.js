@@ -1,13 +1,15 @@
 //weater block start
 Blockly.Blocks['weather'] = {
-      init: function() {
-        this.appendDummyInput()
-        .appendField(new Blockly.FieldLabel('weather api'));//label
-        this.setOutput(true, 'String');
-        //this.setPreviousStatement(true, 'Action');
-        this.setColour(160);
-      }
-    }
+init: function() {
+    this.appendValueInput("to_input")
+        .setCheck(null)
+        .appendField("Weather info");
+    this.setOutput(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
 //weather block end
 
 //motor block start
